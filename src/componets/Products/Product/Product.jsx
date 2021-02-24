@@ -10,7 +10,7 @@ import useStyles from "./styles";
 Product.propTypes = {};
 
 function Product(props) {
-  const { product } = props;
+  const { product, onAddToCart } = props;
   const classes = useStyles();
 
   return (
@@ -31,7 +31,7 @@ function Product(props) {
           color="textSecondary"
         />
         <CardActions className={classes.cardActions}>
-          <IconButton>
+          <IconButton onClick={() => onAddToCart(product.id, 1)}>
             <AddShoppingCart />
           </IconButton>
         </CardActions>
